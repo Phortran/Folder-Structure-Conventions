@@ -72,7 +72,7 @@ or, less commonly, into the `doc` folder.
 
 ### Compiled files
 
-...
+It's often useful to keep any built files completely separate from the source files; the directory usually meant to fulfill this is the `build` directory (or, less commonly, the `dist` directory). Separate build directories are used to hold the built objects files, libraries, and executable programs, etc. for a specific flavor of build. In addition to that, having a dedicated folder for built files makes easier to write targets to clean the workspace in your makefile, without the need to change directory or use regular expression to delete only a certain subset of files. Needless to say, this folder is always initially empty in a cleaned workspace.
 
 ### 3rd party libraries
 
