@@ -11,11 +11,13 @@ Folder Structure Conventions
     ├── src                     # Source files (alternatively `lib` or `app`)
     ├── test                    # Automated tests (alternatively `spec` or `tests`)
     ├── tools                   # Tools and utilities
-    ├── LICENSE
+	├── libraries               # External libraries (alternatively `dep`)
+    ├── LICENCE
+    ├── AUTHORS                 # List of authors
     └── README.md
 
 > Use short lowercase names at least for the top-level files and folders except
-> `LICENSE`, `README.md`
+> `LICENCE`, `AUTHORS`, `README.md`
 
 ### Source files
 
@@ -76,31 +78,57 @@ It's often useful to keep any built files completely separate from the source fi
 
 ### 3rd party libraries
 
-...
+	.
+    ├── ...
+    ├── libraries             # 3rd party dependencies
+    │   ├── lib1              # A library
+    │   │   ├── include       # header files in `include path`
+	│   │   └── lib           # actual static/dynamic library (.a, .so, .dll ...)
+    │   ├── lib2              # Another library
+    │   └── ...               # etc.
+    └── ...
 
-### License information
+As discussed in [this article](http://www.lonecpluspluscoder.com/2014/12/03/managing-third-party-libraries-c-projects/), there are basically three way to manage external libraries:
+
+ - by letting the developers download and install the libraries themselves
+ - by checking third party libraries into the version control repository
+ - by using a package management tool (Maven, npm, ...)
+
+If opting for the second, libraries are supposed to go under the `libraries` directory; this is to avoid having ambiguous name with `lib`, see **Source files** above.
+
+### List of authors
+
+Report every author in the `AUTHORS` file, one line per author, in mailmap format. For instance:
+
+```
+Jon Doe <Jon.Doe@company.com> jdoe <jdoe@somemail.com>
+```
+
+In this example both a real name and an optional alias are specified.
+
+### Licence information
 
 If you want to share your work with others, please consider choosing an open
-source license and include the text of the license into your project.
-The text of a license is usually stored in the `LICENSE` (or `LICENSE.txt`,
-`LICENSE.md`) file in the root of the project.
+source licence and include the text of the licence into your project.
+The text of a licence is usually stored in the `LICENCE` (or `LICENCE.txt`,
+`LICENCE.md`) file in the root of the project.
 
-> You’re under no obligation to choose a license and it’s your right not to
+> You’re under no obligation to choose a licence and it’s your right not to
 > include one with your code or project. But please note that opting out of
-> open source licenses doesn’t mean you’re opting out of copyright law.
+> open source licences doesn’t mean you’re opting out of copyright law.
 > 
 > You’ll have to check with your own legal counsel regarding your particular
-> project, but generally speaking, the absence of a license means that default
+> project, but generally speaking, the absence of a licence means that default
 > copyright laws apply. This means that you retain all rights to your source
 > code and that nobody else may reproduce, distribute, or create derivative
 > works from your work. This might not be what you intend.
 >
-> Even in the absence of a license file, you may grant some rights in cases
+> Even in the absence of a licence file, you may grant some rights in cases
 > where you publish your source code to a site that requires accepting terms
 > of service. For example, if you publish your source code in a public
 > repository on GitHub, you have accepted the [Terms of Service](https://help.github.com/articles/github-terms-of-service)
 > which do allow other GitHub users some rights. Specifically, you allow others
 > to view and fork your repository.
 
-For more info on how to choose a license for an open source project, please
+For more info on how to choose a licence for an open source project, please
 refer to http://choosealicense.com
