@@ -11,7 +11,7 @@ Folder Structure Conventions
     ├── src                     # Source files (alternatively `lib` or `app`)
     ├── test                    # Automated tests (alternatively `spec` or `tests`)
     ├── tools                   # Tools and utilities
-	├── libraries               # External libraries (alternatively `dep`)
+    ├── libraries               # External libraries (alternatively `dep`)
     ├── LICENCE
     ├── AUTHORS                 # List of authors
     └── README.md
@@ -23,8 +23,9 @@ Folder Structure Conventions
 
     .
     ├── src                     # Source files
-	├── include             # (public) header files [optional]
-	├── ...
+    │   ├── include             # (public) header files [optional]
+    │   ├── ...
+    ...
 
 The actual source files of a software project are usually stored inside the
 `src` folder. Alternatively, you can put them into the `lib` (if you're
@@ -89,7 +90,7 @@ It's often useful to keep any built files completely separate from the source fi
     ├── libraries             # 3rd party dependencies
     │   ├── lib1              # A library
     │   │   ├── include       # header files in `include path`
-	│   │   └── lib           # actual static/dynamic library (.a, .so, .dll ...)
+    │   │   │   └── lib           # actual static/dynamic library (.a, .so, .dll ...)
     │   ├── lib2              # Another library
     │   └── ...               # etc.
     └── ...
